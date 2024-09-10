@@ -1,8 +1,14 @@
 {
+  "MailTo": {
+    "adress": "beratung@kopfmb.org",
+    "subject": "",
+    "message": "Sehr geehrte Damen und Herren,"
+  },
   "Header": {
     "title1": "Ihr Impulsgeber für",
     "title2": "Veränderungsprozesse",
-    "paragraph": "Maßgeschneiderte Impulse, Seminare und Coaching von erfahrenen Führungskräften für Fach- und Führungskräfte"
+    "paragraph": "Maßgeschneiderte Impulse, Seminare und Coaching von erfahrenen Führungskräften für Fach- und Führungskräfte",
+    "aboutUs": "Unser Team besteht aus Führungskräften unterschiedlicher Branchen und fachlicher Schwerpunkte. Jeden einzelnen zeichnet mehrjährige Führungserfahrung, Umsatzverantwortung und fachliche Expertise aus, so dass wir in Absprache mit Ihnen den richtigen Impulsgeber oder die richtige Impulsgeberin für ihr Unternehmen finden. Wir freuen uns auf ihre Kontaktaufnahme."
   },
   "About": {
     "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -162,24 +168,19 @@
   },
   "Features": [
     {
-      "icon": "fa fa-comments-o",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "./img/icons/leistung1.png",
+      "title": "Seminare für Fach- und Führungskräfte",
+      "text": "In unseren Seminaren verschmelzen wir die neuesten Erkenntnisse aus den Fachdisziplinen Neurowissenschaften, psychologische Forschung und moderne Organisationslehre mit dem praktischen Arbeitsalltag. Sie, wie auch ihre Fach- und Führungskräfte erhalten Wissen, welches nicht zu \"Googeln\" ist, sowie Handwerkszeug um ihre Arbeit zu professionalisieren und ihr Unternehmen in die Zukunft zu führen."
     },
     {
-      "icon": "fa fa-bullhorn",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "./img/icons/leistung2.png",
+      "title": "Impulsveranstaltungen und Beratung",
+      "text": "Eine Kurzanalyse mit darauffolgenden Impulsveranstaltungen sowie weiterführender Moderation ideal, um ihr Unternehmen mit den vorhandenen Ressourcen stärker aufzustellen, Dienstleistungs- und Verwaltungsprozesse zu optimieren, Restrukturierungen umzusetzen oder eine neue Führungskultur zu implementieren."
     },
     {
-      "icon": "fa fa-group",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
-    },
-    {
-      "icon": "fa fa-magic",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "./img/icons/leistung3.png",
+      "title": "Angebote im Coachingbereich",
+      "text": "Ob Human Development Coaching, Life-Coaching oder Jobcoaching - sie entscheiden und wir liefern maßgeschneidertes Coaching."
     }
   ]
 }
