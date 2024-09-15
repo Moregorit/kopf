@@ -11,151 +11,71 @@
     "aboutUs": "Unser Team besteht aus Führungskräften unterschiedlicher Branchen und fachlicher Schwerpunkte. Jeden einzelnen zeichnet mehrjährige Führungserfahrung, Umsatzverantwortung und fachliche Expertise aus, so dass wir in Absprache mit Ihnen den richtigen Impulsgeber oder die richtige Impulsgeberin für ihr Unternehmen finden. Wir freuen uns auf ihre Kontaktaufnahme."
   },
   "About": {
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Why": [
-      "Lorem ipsum dolor",
-      "Tempor incididunt",
-      "Lorem ipsum dolor",
-      "Incididunt ut labore"
+    "paragraph": "Kontinuierlich erfordern Veränderungen des wirtschaftlichen und sozialen Umfeldes eine hohe Agilität und Anpassungsfreude von uns als Fach- und Führungskräfte. Um stetig \"up-to-date\" zu sein, den Anschluss zu halten oder anderen Marktteilnehmern immer ein Stück voraus zu sein, kauft man sich zu respektablen Summen externes \"Know-how\" ein. So weit, so gut. \nDie damit einhergehenden Erwartungen sind kurz- bis längerfristige Optimierungen, eine Erhöhung der Wirtschaftlichkeit und vieles mehr. Doch profitieren wir nachhaltig von den Inhalten der Seminare? Auch Restrukturierungen sowie die Entwicklung von Führungskompetenzen sind nur nachhaltig und führen zu den erwünschten Zielen, wenn die Instrumente gut sind und ihre Fach- und Führungskräfte diese nutzen können und wollen. \nFür eine erfolgreiche Unternehmensführung ist es daher essentiell, neben guten Instrumenten die Überzeugung für die Notwendigkeit von Veränderungen in den Köpfen der Mitarbeitenden zu entwickeln. Aus diesem Grunde haben wir uns als Führungskräfte entschlossen, Ihnen lösungsorientierte Seminare, Impulsveranstaltungen sowie maßgeschneiderte Beratung anzubieten.",
+    "checkboxes1": [
+      "Führungskräfteschulungen",
+      "Organisationsentwicklung",
+      "Restrukturierung"
     ],
-    "Why2": [
-      "Aliquip ex ea commodo",
-      "Lorem ipsum dolor",
-      "Exercitation ullamco",
-      "Lorem ipsum dolor"
+    "checkboxes2": ["Coaching", "Change- und Projektmanagement"],
+    "paragraph2": "Die Anzahl der Schritte hängt vom Projekt ab, aber so ist es normalerweise:",
+    "steps": [
+      {
+        "title": "Kontaktaufnahme",
+        "text": "Kurze unverbindliche Anfrage ihrerseits. Vereinbarung eins Auftaktgespräches, zur gemeinsamen Zielfestlegung. Sie signalisieren Interesse und wir kommen innerhalb von 5 Werktagen auf sie zu.",
+        "image": "img/icons/step1.svg"
+      },
+      {
+        "title": "Vertrag",
+        "text": "Unsere Zielvereinbarungen werden in einem entsprechende Dienstleistungsvertrag festgehalten. Im Rahmen unserer Seminare besteht die Möglichkeit einer formlosen schriftlichen Bestätigung der Annahme des Angebotes.",
+        "image": "img/icons/step2.svg"
+      },
+      {
+        "title": "Diagnostik",
+        "text": "Auf Wunsch führen wir eine Kurzanalyse durch. Auf Basis dieser Analyse kann die Dienstleistung angepasst werden kann. Flexibel gehen wir während des Zeitraums der Leistungserbringung auf Änderungswünsche ihrerseits ein.",
+        "image": "img/icons/step3.svg"
+      },
+      {
+        "title": "Sicherung der Ergebnisqualität",
+        "text": "Im Anschluss an die erbrachte Leistung erhalten sie einen \"Handwerkskoffer\" mit Maßnahmen zur Sicherung der erzielten Ergebnisse.",
+        "image": "img/icons/step4.svg"
+      }
     ]
   },
-  "Gallery": [
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/01-large.jpg",
-      "smallImage": "img/portfolio/01-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/02-large.jpg",
-      "smallImage": "img/portfolio/02-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/03-large.jpg",
-      "smallImage": "img/portfolio/03-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/04-large.jpg",
-      "smallImage": "img/portfolio/04-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/05-large.jpg",
-      "smallImage": "img/portfolio/05-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/06-large.jpg",
-      "smallImage": "img/portfolio/06-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/07-large.jpg",
-      "smallImage": "img/portfolio/07-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/08-large.jpg",
-      "smallImage": "img/portfolio/08-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
-    }
-  ],
-  "Services": [
-    {
-      "icon": "fa fa-wordpress",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-cart-arrow-down",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-cloud-download",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-language",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-plane",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-pie-chart",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    }
-  ],
   "Testimonials": [
     {
       "img": "img/testimonials/01.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe"
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+      "name": "John Doe",
+      "company": "IP Electronics GmbH"
     },
     {
       "img": "img/testimonials/02.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe"
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+      "name": "Johnathan Doe",
+      "company": "BASF"
     },
     {
       "img": "img/testimonials/03.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe"
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+      "name": "John Doe",
+      "company": "Daimler AG"
     },
     {
       "img": "img/testimonials/04.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe"
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
+      "name": "Johnathan Doe",
+      "company": "Färber-Motoren GmbH"
     },
     {
       "img": "img/testimonials/05.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
       "name": "John Doe"
     },
     {
       "img": "img/testimonials/06.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.",
       "name": "Johnathan Doe"
-    }
-  ],
-  "Team": [
-    {
-      "img": "img/team/01.jpg",
-      "name": "John Doe",
-      "job": "Director"
-    },
-    {
-      "img": "img/team/02.jpg",
-      "name": "Mike Doe",
-      "job": "Senior Designer"
-    },
-    {
-      "img": "img/team/03.jpg",
-      "name": "Jane Doe",
-      "job": "Senior Designer"
-    },
-    {
-      "img": "img/team/04.jpg",
-      "name": "Karen Doe",
-      "job": "Project Manager"
     }
   ],
   "Contact": {

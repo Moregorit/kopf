@@ -4,7 +4,8 @@ export const Header = (props) => {
   // parallax handling
   const [offsetY, setOffsetY] = useState(0);
   useEffect(() => {
-    const handleScroll = () => setOffsetY(window.scrollY);
+    const handleScroll = () =>
+      window.innerWidth > 748 ? setOffsetY(window.scrollY) : setOffsetY(0); // off paralax on mobile
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);

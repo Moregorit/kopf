@@ -98,45 +98,36 @@ export const Navigation = (props) => {
           className="collapse navbar-collapse"
           id="bs-example-navbar-collapse-1"
         >
-          <div style={{ marginTop: '-15px' }}>
+          <div
+            style={{
+              marginTop: '-15px',
+              display: 'flex',
+              justifyContent: 'space-between',
+            }}
+          >
+            {' '}
+            <span className="navbar-cheat"></span>
             <ul className="nav navbar-nav navbar-right">
-              <li>
-                <a href="#about" className="page-scroll">
-                  Über uns
-                </a>
-              </li>
               <li>
                 <a href="#features" className="page-scroll">
                   Leistungen
                 </a>
               </li>
               <li>
-                <a href="#services" className="page-scroll">
-                  Services
+                <a href="#about" className="page-scroll">
+                  Über uns
                 </a>
               </li>
-              {/* <li>
-                <a href="#portfolio" className="page-scroll">
-                  Gallery
-                </a>
-              </li>
-              <li>
-                <a href="#testimonials" className="page-scroll">
-                  Testimonials
-                </a>
-              </li> */}
               <li>
                 <a href="#contact" className="page-scroll">
                   Kontakt
                 </a>
               </li>
               <li>
-                <EmailButton className="mail-btn" id="mail-btn" />
-              </li>
-              <li>
                 <EmailButton className="mail-btn-toggle" id="mail-btn-toggle" />
               </li>
             </ul>
+            <EmailButton className="mail-btn" id="mail-btn" />
           </div>
         </div>
       </div>

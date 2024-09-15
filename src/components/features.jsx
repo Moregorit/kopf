@@ -4,7 +4,7 @@ export const Features = (props) => {
   return (
     <div id="features" className="features-section">
       <div className="container">
-        <div className="features-header">
+        <div className="text-center">
           <h3>Leistungen</h3>
         </div>
         <div className="features-cards">
