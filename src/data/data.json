@@ -1,6 +1,6 @@
 {
   "MailTo": {
-    "adress": "beratung@kopfmb.org",
+    "email": "beratung@kopfmb.org",
     "subject": "",
     "message": "Sehr geehrte Damen und Herren,"
   },
@@ -10,6 +10,23 @@
     "paragraph": "Maßgeschneiderte Impulse, Seminare und Coaching von erfahrenen Führungskräften für Fach- und Führungskräfte",
     "aboutUs": "Unser Team besteht aus Führungskräften unterschiedlicher Branchen und fachlicher Schwerpunkte. Jeden einzelnen zeichnet mehrjährige Führungserfahrung, Umsatzverantwortung und fachliche Expertise aus, so dass wir in Absprache mit Ihnen den richtigen Impulsgeber oder die richtige Impulsgeberin für ihr Unternehmen finden. Wir freuen uns auf ihre Kontaktaufnahme."
   },
+  "Features": [
+    {
+      "icon": "./img/icons/leistung1.png",
+      "title": "Seminare für Fach- und Führungskräfte",
+      "text": "In unseren Seminaren verschmelzen wir die neuesten Erkenntnisse aus den Fachdisziplinen Neurowissenschaften, psychologische Forschung und moderne Organisationslehre mit dem praktischen Arbeitsalltag. Sie, wie auch ihre Fach- und Führungskräfte erhalten Wissen, welches nicht zu \"Googeln\" ist, sowie Handwerkszeug um ihre Arbeit zu professionalisieren und ihr Unternehmen in die Zukunft zu führen."
+    },
+    {
+      "icon": "./img/icons/leistung2.png",
+      "title": "Impulsveranstaltungen und Beratung",
+      "text": "Eine Kurzanalyse mit darauffolgenden Impulsveranstaltungen sowie weiterführender Moderation ideal, um ihr Unternehmen mit den vorhandenen Ressourcen stärker aufzustellen, Dienstleistungs- und Verwaltungsprozesse zu optimieren, Restrukturierungen umzusetzen oder eine neue Führungskultur zu implementieren."
+    },
+    {
+      "icon": "./img/icons/leistung3.png",
+      "title": "Angebote im Coachingbereich",
+      "text": "Ob Human Development Coaching, Life-Coaching oder Jobcoaching - sie entscheiden und wir liefern maßgeschneidertes Coaching."
+    }
+  ],
   "About": {
     "paragraph": "Kontinuierlich erfordern Veränderungen des wirtschaftlichen und sozialen Umfeldes eine hohe Agilität und Anpassungsfreude von uns als Fach- und Führungskräfte. Um stetig \"up-to-date\" zu sein, den Anschluss zu halten oder anderen Marktteilnehmern immer ein Stück voraus zu sein, kauft man sich zu respektablen Summen externes \"Know-how\" ein. So weit, so gut. \nDie damit einhergehenden Erwartungen sind kurz- bis längerfristige Optimierungen, eine Erhöhung der Wirtschaftlichkeit und vieles mehr. Doch profitieren wir nachhaltig von den Inhalten der Seminare? Auch Restrukturierungen sowie die Entwicklung von Führungskompetenzen sind nur nachhaltig und führen zu den erwünschten Zielen, wenn die Instrumente gut sind und ihre Fach- und Führungskräfte diese nutzen können und wollen. \nFür eine erfolgreiche Unternehmensführung ist es daher essentiell, neben guten Instrumenten die Überzeugung für die Notwendigkeit von Veränderungen in den Köpfen der Mitarbeitenden zu entwickeln. Aus diesem Grunde haben wir uns als Führungskräfte entschlossen, Ihnen lösungsorientierte Seminare, Impulsveranstaltungen sowie maßgeschneiderte Beratung anzubieten.",
     "checkboxes1": [
@@ -79,28 +96,10 @@
     }
   ],
   "Contact": {
-    "address": "4321 California St, San Francisco, CA 12345 ",
-    "phone": "+1 123 456 1234",
-    "email": "info@company.com",
-    "facebook": "fb.com",
-    "twitter": "twitter.com",
-    "youtube": "youtube.com"
-  },
-  "Features": [
-    {
-      "icon": "./img/icons/leistung1.png",
-      "title": "Seminare für Fach- und Führungskräfte",
-      "text": "In unseren Seminaren verschmelzen wir die neuesten Erkenntnisse aus den Fachdisziplinen Neurowissenschaften, psychologische Forschung und moderne Organisationslehre mit dem praktischen Arbeitsalltag. Sie, wie auch ihre Fach- und Führungskräfte erhalten Wissen, welches nicht zu \"Googeln\" ist, sowie Handwerkszeug um ihre Arbeit zu professionalisieren und ihr Unternehmen in die Zukunft zu führen."
-    },
-    {
-      "icon": "./img/icons/leistung2.png",
-      "title": "Impulsveranstaltungen und Beratung",
-      "text": "Eine Kurzanalyse mit darauffolgenden Impulsveranstaltungen sowie weiterführender Moderation ideal, um ihr Unternehmen mit den vorhandenen Ressourcen stärker aufzustellen, Dienstleistungs- und Verwaltungsprozesse zu optimieren, Restrukturierungen umzusetzen oder eine neue Führungskultur zu implementieren."
-    },
-    {
-      "icon": "./img/icons/leistung3.png",
-      "title": "Angebote im Coachingbereich",
-      "text": "Ob Human Development Coaching, Life-Coaching oder Jobcoaching - sie entscheiden und wir liefern maßgeschneidertes Coaching."
-    }
-  ]
+    "text": "Sprechen Sie uns an oder vereinbaren Sie gleich einen digitalen Austauschtermin. Hier finden wir heraus, ob die „Chemie passt“ und wir der richtige Partner für ihre persönlichen und unternehmerischen Ziele sind.",
+    "address": "Frankfurter Tor 4, 10243, Berlin",
+    "phone": "+49 157 777 24119",
+    "email": "beratung@kopfmb.org",
+    "copyright": "Niederlassung Deutschland ©KOPF-Managementberatung"
+  }
 }

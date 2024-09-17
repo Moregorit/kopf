@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useVisibility } from '../useVisibility';
 
 export const Header = (props) => {
+  const { isVisible, domRef } = useVisibility();
   // parallax handling
   const [offsetY, setOffsetY] = useState(0);
   useEffect(() => {
-    const handleScroll = () =>
-      window.innerWidth > 748 ? setOffsetY(window.scrollY) : setOffsetY(0); // off paralax on mobile
+    const handleScroll = () => setOffsetY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -20,7 +22,6 @@ export const Header = (props) => {
       setStyle({ display: 'block' });
     }
   };
-
   useEffect(() => {
     window.addEventListener('scroll', handleScrollAndSize);
     handleScrollAndSize();
@@ -75,7 +76,12 @@ export const Header = (props) => {
             <div className="aboutus">
               <div className="aboutus-content" id="aboutus">
                 <h3>Wer wir sind?</h3>
-                <p>{props.data ? props.data.aboutUs : 'Loading'}</p>
+                <p
+                  className={`fade-in ${isVisible ? 'fade-in-visible' : ''}`}
+                  ref={domRef}
+                >
+                  {props.data ? props.data.aboutUs : 'Loading'}
+                </p>
               </div>
             </div>
           </div>

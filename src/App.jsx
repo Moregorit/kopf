@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Navigation } from './components/navigation';
 import { Header } from './components/header';
 import { Features } from './components/features';
@@ -6,6 +6,7 @@ import { Interest, FinalText } from './components/dividers';
 import { About } from './components/about';
 import { Testimonials } from './components/testimonials';
 import { Contact } from './components/contact';
+import { Footer } from './components/footer';
 import JsonData from './data/data.json';
 import SmoothScroll from 'smooth-scroll';
 import './App.css';
@@ -17,6 +18,7 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 
 const App = () => {
   const [landingPageData, setLandingPageData] = useState({});
+
   useEffect(() => {
     setLandingPageData(JsonData);
   }, []);
@@ -26,11 +28,12 @@ const App = () => {
       <Navigation data={landingPageData.MailTo} />
       <Header data={landingPageData.Header} />
       <Features data={landingPageData.Features} />
-      <Interest data={landingPageData.Interest} />
+      <Interest />
       <About data={landingPageData.About} />
-      <FinalText />
       <Testimonials data={landingPageData.Testimonials} />
       <Contact data={landingPageData.Contact} />
+      <FinalText />
+      <Footer data={landingPageData.Contact} />
     </div>
   );
 };

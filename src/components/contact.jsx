@@ -1,163 +1,119 @@
-import { useState } from "react";
-import emailjs from "emailjs-com";
-import React from "react";
+import { useState } from 'react';
+import { useVisibility } from '../useVisibility';
 
-const initialState = {
-  name: "",
-  email: "",
-  message: "",
-};
 export const Contact = (props) => {
-  const [{ name, email, message }, setState] = useState(initialState);
+  const { isVisible, domRef } = useVisibility();
+  const EmailButton = ({ id }) => {
+    const handleEmailClick = (event) => {
+      event.preventDefault();
+      const mailtoUrl = `mailto:${props.data ? props.data.email : 'Loading'}`;
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${
+        props.data ? props.data.email : 'Loading'
+      }`;
+      // open mail app
+      window.location.href = mailtoUrl;
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setState((prevState) => ({ ...prevState, [name]: value }));
-  };
-  const clearState = () => setState({ ...initialState });
-  
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(name, email, message);
-    
-    {/* replace below with your own Service ID, Template ID and Public Key from your EmailJS account */ }
-    
-    emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_PUBLIC_KEY")
-      .then(
-        (result) => {
-          console.log(result.text);
-          clearState();
-        },
-        (error) => {
-          console.log(error.text);
+      setTimeout(() => {
+        // if app not opened, open gmail
+        if (window.location.href === mailtoUrl) {
+          window.location.href = gmailUrl;
         }
-      );
-  };
-  return (
-    <div>
-      <div id="contact">
-        <div className="container">
-          <div className="col-md-8">
-            <div className="row">
-              <div className="section-title">
-                <h2>Get In Touch</h2>
-                <p>
-                  Please fill out the form below to send us an email and we will
-                  get back to you as soon as possible.
-                </p>
-              </div>
-              <form name="sentMessage" validate onSubmit={handleSubmit}>
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        className="form-control"
-                        placeholder="Name"
-                        required
-                        onChange={handleChange}
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        className="form-control"
-                        placeholder="Email"
-                        required
-                        onChange={handleChange}
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
-                  </div>
-                </div>
-                <div className="form-group">
-                  <textarea
-                    name="message"
-                    id="message"
-                    className="form-control"
-                    rows="4"
-                    placeholder="Message"
-                    required
-                    onChange={handleChange}
-                  ></textarea>
-                  <p className="help-block text-danger"></p>
-                </div>
-                <div id="success"></div>
-                <button type="submit" className="btn btn-custom btn-lg">
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
-          <div className="col-md-3 col-md-offset-1 contact-info">
-            <div className="contact-item">
-              <h3>Contact Info</h3>
-              <p>
-                <span>
-                  <i className="fa fa-map-marker"></i> Address
-                </span>
-                {props.data ? props.data.address : "loading"}
-              </p>
-            </div>
-            <div className="contact-item">
-              <p>
-                <span>
-                  <i className="fa fa-phone"></i> Phone
-                </span>{" "}
-                {props.data ? props.data.phone : "loading"}
-              </p>
-            </div>
-            <div className="contact-item">
-              <p>
-                <span>
-                  <i className="fa fa-envelope-o"></i> Email
-                </span>{" "}
-                {props.data ? props.data.email : "loading"}
-              </p>
-            </div>
-          </div>
-          <div className="col-md-12">
-            <div className="row">
-              <div className="social">
-                <ul>
-                  <li>
-                    <a href={props.data ? props.data.facebook : "/"}>
-                      <i className="fa fa-facebook"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.twitter : "/"}>
-                      <i className="fa fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.youtube : "/"}>
-                      <i className="fa fa-youtube"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+      }, 1000);
+    };
+    return (
+      <div id={id}>
+        <h4
+          href="unknown"
+          id={id}
+          onClick={handleEmailClick}
+          style={{ color: 'rgb(38, 81, 181)', cursor: 'pointer' }}
+        >
+          {props.data ? props.data.email : 'Loading'}
+        </h4>
       </div>
-      <div id="footer">
-        <div className="container text-center">
-          <p>
-            &copy; 2023 Issaaf Kattan React Land Page Template. Design by{" "}
-            <a href="http://www.templatewire.com" rel="nofollow">
-              TemplateWire
-            </a>
-          </p>
+    );
+  };
+
+  const PhoneNumber = (props) => {
+    const [copied, setCopied] = useState(false);
+
+    const handleCopyPhoneNumber = () => {
+      const phoneNumber = props.data ? props.data.phone : '';
+      if (phoneNumber) {
+        // clipboard API suppport check
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard
+            .writeText(phoneNumber)
+            .then(() => {
+              showCopiedMessage();
+            })
+            .catch(() => {
+              alert('Не удалось скопировать номер телефона.');
+            });
+        } else {
+          const textArea = document.createElement('textarea');
+          textArea.value = phoneNumber;
+          document.body.appendChild(textArea);
+          textArea.select();
+          try {
+            document.execCommand('copy');
+            showCopiedMessage();
+          } catch (err) {
+            alert('Не удалось скопировать номер телефона.');
+          }
+          document.body.removeChild(textArea);
+        }
+      }
+    };
+    const showCopiedMessage = () => {
+      setCopied(true);
+      setTimeout(() => {
+        setCopied(false);
+      }, 3000);
+    };
+    return (
+      <div>
+        <div onClick={handleCopyPhoneNumber} style={{ cursor: 'pointer' }}>
+          <h4 style={{ color: 'rgb(38, 81, 181)', cursor: 'pointer' }}>
+            {props.data ? props.data.phone : 'Loading'}
+          </h4>
+        </div>
+        {copied && <div className="copy-message">Nummer kopiert</div>}
+      </div>
+    );
+  };
+
+  return (
+    <div id="contact" className="contact-section">
+      <div className="container">
+        <div className="text-center">
+          <h3>Kontakt</h3>
+        </div>
+        <div className="contact-grid">
+          <div
+            ref={domRef}
+            className={`contact-info ${
+              window.innerWidth > 768 ? 'slide-left' : 'slide-right'
+            } ${isVisible ? 'slide-visible' : ''}`}
+          >
+            <div className="contact-element">
+              <img src="img/icons/telnummer.svg" alt="" width={24} />
+              <PhoneNumber data={props.data} />
+            </div>
+
+            <div className="contact-element">
+              <img src="img/icons/mail1.svg" alt="" width={24} />
+              <EmailButton />
+            </div>
+          </div>
+          <h5
+            className={`${
+              window.innerWidth > 768 ? 'slide-right' : 'slide-left'
+            } ${isVisible ? 'slide-visible' : ''}`}
+            style={{ color: '#000' }}
+          >
+            {props.data ? props.data.text : 'Loading'}
+          </h5>{' '}
         </div>
       </div>
     </div>

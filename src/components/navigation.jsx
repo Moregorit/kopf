@@ -5,14 +5,14 @@ export const Navigation = (props) => {
     const handleEmailClick = (event) => {
       event.preventDefault();
       const mailtoUrl = `mailto:${
-        props.data ? props.data.adress : 'Loading'
+        props.data ? props.data.email : 'Loading'
       }?subject=${props.data ? props.data.subject : ''}&body=${
         props.data ? props.data.message : ''
       }`;
       const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${
         props.data ? props.data.adress : 'Loading'
       }&su=${props.data ? props.data.subject : ''}&body=${
-        props.data ? props.data.message : ''
+        props.data ? props.data.email : ''
       }`;
       // open mail app
       window.location.href = mailtoUrl;
@@ -27,7 +27,7 @@ export const Navigation = (props) => {
     return (
       <div id={id} className={className}>
         <a
-          href="#"
+          href="unknown"
           id={id}
           className="text-mail-btn"
           onClick={handleEmailClick}
@@ -44,6 +44,36 @@ export const Navigation = (props) => {
       </div>
     );
   };
+
+  // link active scroll -75px
+  const [activeLink, setActiveLink] = React.useState('');
+  const handleScroll = () => {
+    const sections = [
+      document.querySelector('#features'),
+      document.querySelector('#about'),
+      document.querySelector('#contact'),
+    ];
+    let current = '';
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 30;
+      if (
+        window.scrollY >= sectionTop &&
+        window.scrollY < sectionTop + section.offsetHeight
+      ) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    setActiveLink(current);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
@@ -109,17 +139,26 @@ export const Navigation = (props) => {
             <span className="navbar-cheat"></span>
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <a href="#features" className="page-scroll">
+                <a
+                  href="#features"
+                  className={activeLink === 'features' ? 'active' : ''}
+                >
                   Leistungen
                 </a>
               </li>
               <li>
-                <a href="#about" className="page-scroll">
+                <a
+                  href="#about"
+                  className={activeLink === 'about' ? 'active' : ''}
+                >
                   Über uns
                 </a>
               </li>
               <li>
-                <a href="#contact" className="page-scroll">
+                <a
+                  href="#contact"
+                  className={activeLink === 'contact' ? 'active' : ''}
+                >
                   Kontakt
                 </a>
               </li>

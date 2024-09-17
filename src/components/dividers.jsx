@@ -1,6 +1,8 @@
 import React from 'react';
+import { useVisibility } from '../useVisibility';
 
-export const Interest = (props) => {
+export const Interest = () => {
+  const { isVisible, domRef } = useVisibility();
   return (
     <div className="intro">
       <div
@@ -11,20 +13,19 @@ export const Interest = (props) => {
         }}
       >
         <div className="container">
-          <div
-            className="interest"
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '40px 0',
-            }}
-          >
-            <h5>Interessiert? Kontakt uns!</h5>{' '}
+          <div className="interest">
+            <h5
+              ref={domRef}
+              className={`slide-left ${isVisible ? 'slide-visible' : ''}`}
+            >
+              Interessiert? Kontakt uns!
+            </h5>{' '}
             <a
               href="#contact"
-              className="title-opacity btn btn-custom btn-lg page-scroll"
+              ref={domRef}
+              className={`title-opacity btn btn-custom btn-lg page-scroll slide-right ${
+                isVisible ? 'slide-visible' : ''
+              }`}
               style={{ marginTop: '20px' }}
             >
               Zum Kontakt
@@ -36,7 +37,7 @@ export const Interest = (props) => {
   );
 };
 
-export const FinalText = (props) => {
+export const FinalText = () => {
   return (
     <div className="intro">
       <div
@@ -47,17 +48,7 @@ export const FinalText = (props) => {
         }}
       >
         <div className="container">
-          <div
-            className="interest"
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '40px 0',
-              maxWidth: '800px',
-            }}
-          >
+          <div className="interest">
             <h5>
               Unser Leistungsversprechen: Sie werden von dem Mehrwert für sich
               und ihr Unternehmen begeistert sein.
