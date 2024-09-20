@@ -45,38 +45,64 @@ export const Navigation = (props) => {
     );
   };
 
-  // link active scroll -75px
+  // link active scroll offset -75px, navbar hide on scroll
   const [activeLink, setActiveLink] = React.useState('');
-  const handleScroll = () => {
-    const sections = [
-      document.querySelector('#features'),
-      document.querySelector('#about'),
-      document.querySelector('#contact'),
-    ];
-    let current = '';
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 30;
-      if (
-        window.scrollY >= sectionTop &&
-        window.scrollY < sectionTop + section.offsetHeight
-      ) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    setActiveLink(current);
-  };
+  const [isVisible, setIsVisible] = React.useState(true); // navbar visibility
+  const [scrollY, setScrollY] = React.useState(0); // scroll position
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768);
 
   React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (isMobile) {
+        if (currentScrollY > scrollY) {
+          setIsVisible(false);
+        } else {
+          setIsVisible(true);
+        }
+      }
+      const sections = [
+        document.querySelector('#features'),
+        document.querySelector('#about'),
+        document.querySelector('#contact'),
+      ];
+      let current = '';
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 30;
+        if (
+          currentScrollY >= sectionTop &&
+          currentScrollY < sectionTop + section.offsetHeight
+        ) {
+          current = section.getAttribute('id');
+        }
+      });
+      setActiveLink(current);
+      setScrollY(currentScrollY);
+    };
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [scrollY, isMobile]);
 
   return (
-    <nav id="menu" className="navbar navbar-default navbar-fixed-top">
+    <nav
+      id="menu"
+      className={`navbar navbar-default navbar-fixed-top ${
+        isVisible ? 'nav-visible' : 'nav-hidden'
+      }`}
+    >
       <div className="container">
         <div className="navbar-header">
           <div
