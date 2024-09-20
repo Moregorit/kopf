@@ -1,48 +1,27 @@
 import React from 'react';
 
 export const Navigation = (props) => {
-  const EmailButton = ({ className, id }) => {
-    const handleEmailClick = (event) => {
-      event.preventDefault();
-      const mailtoUrl = `mailto:${
-        props.data ? props.data.email : 'Loading'
-      }?subject=${props.data ? props.data.subject : ''}&body=${
-        props.data ? props.data.message : ''
-      }`;
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${
-        props.data ? props.data.adress : 'Loading'
-      }&su=${props.data ? props.data.subject : ''}&body=${
-        props.data ? props.data.email : ''
-      }`;
-      // open mail app
-      window.location.href = mailtoUrl;
+  const handleEmailClick = (event) => {
+    event.preventDefault();
+    const mailtoUrl = `mailto:${
+      props.data ? props.data.email : 'Loading'
+    }?subject=${props.data ? props.data.subject : ''}&body=${
+      props.data ? props.data.message : ''
+    }`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${
+      props.data ? props.data.adress : 'Loading'
+    }&su=${props.data ? props.data.subject : ''}&body=${
+      props.data ? props.data.email : ''
+    }`;
+    // open mail app
+    window.location.href = mailtoUrl;
 
-      setTimeout(() => {
-        // if app not opened, open gmail
-        if (window.location.href === mailtoUrl) {
-          window.location.href = gmailUrl;
-        }
-      }, 1000);
-    };
-    return (
-      <div id={id} className={className}>
-        <a
-          href="unknown"
-          id={id}
-          className="text-mail-btn"
-          onClick={handleEmailClick}
-          style={{ color: 'rgb(38, 81, 181)' }}
-        >
-          <img
-            id={id}
-            src="./img/icons/mail.svg"
-            alt="mailIcon"
-            style={{ paddingRight: '12px' }}
-          />
-          Kontakt uns
-        </a>
-      </div>
-    );
+    setTimeout(() => {
+      // if app not opened, open gmail
+      if (window.location.href === mailtoUrl) {
+        window.location.href = gmailUrl;
+      }
+    }, 1000);
   };
 
   // link active scroll offset -75px, navbar hide on scroll
@@ -64,7 +43,7 @@ export const Navigation = (props) => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (isMobile) {
-        if (currentScrollY > scrollY) {
+        if (currentScrollY > scrollY && currentScrollY > 800) {
           setIsVisible(false);
         } else {
           setIsVisible(true);
@@ -189,10 +168,42 @@ export const Navigation = (props) => {
                 </a>
               </li>
               <li>
-                <EmailButton className="mail-btn-toggle" id="mail-btn-toggle" />
+                <div id="mail-btn-toggle" className="mail-btn-toggle">
+                  <a
+                    href="unknown"
+                    id="text-mail-btn"
+                    className="text-mail-btn"
+                    onClick={handleEmailClick}
+                    style={{ color: 'rgb(38, 81, 181)' }}
+                  >
+                    <img
+                      id="img-mail-btn"
+                      src="./img/icons/mail.svg"
+                      alt="mailIcon"
+                      style={{ paddingRight: '12px' }}
+                    />
+                    Kontakt uns
+                  </a>
+                </div>
               </li>
             </ul>
-            <EmailButton className="mail-btn" id="mail-btn" />
+            <div id="mail-btn" className="mail-btn">
+              <a
+                href="unknown"
+                id="text-mail-btn"
+                className="text-mail-btn"
+                onClick={handleEmailClick}
+                style={{ color: 'rgb(38, 81, 181)' }}
+              >
+                <img
+                  id="img-mail-btn"
+                  src="./img/icons/mail.svg"
+                  alt="mailIcon"
+                  style={{ paddingRight: '12px' }}
+                />
+                Kontakt uns
+              </a>
+            </div>
           </div>
         </div>
       </div>
