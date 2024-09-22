@@ -3,12 +3,18 @@ import { useVisibility } from '../useVisibility';
 
 export const Header = (props) => {
   const { isVisible, domRef } = useVisibility();
+  // safari check
+  const isSafari = () => {
+    const browserName = navigator.userAgent.toLowerCase();
+    return browserName.includes('safari') && !browserName.includes('chrome');
+  };
+
   // parallax handling
   const [offsetY, setOffsetY] = useState(0);
   useEffect(() => {
-    const handleScroll = () => setOffsetY(window.scrollY);
+    const handleScroll = () =>
+      !isSafari() ? setOffsetY(window.scrollY) : null;
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
