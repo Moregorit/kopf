@@ -1,17 +1,17 @@
 import React from 'react';
 
-export const Navigation = (props) => {
+export const Navigation = (mailTo) => {
   const handleEmailClick = (event) => {
     event.preventDefault();
     const mailtoUrl = `mailto:${
-      props.data ? props.data.email : 'Loading'
-    }?subject=${props.data ? props.data.subject : ''}&body=${
-      props.data ? props.data.message : ''
+      mailTo.data ? mailTo.data.email : 'Loading'
+    }?subject=${mailTo.data ? mailTo.data.subject : ''}&body=${
+      mailTo.data ? mailTo.data.message : ''
     }`;
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${
-      props.data ? props.data.adress : 'Loading'
-    }&su=${props.data ? props.data.subject : ''}&body=${
-      props.data ? props.data.email : ''
+      mailTo.data ? mailTo.data.adress : 'Loading'
+    }&su=${mailTo.data ? mailTo.data.subject : ''}&body=${
+      mailTo.data ? mailTo.data.email : ''
     }`;
     // open mail app
     window.location.href = mailtoUrl;
@@ -29,10 +29,12 @@ export const Navigation = (props) => {
   const [isVisible, setIsVisible] = React.useState(true); // navbar visibility
   const [scrollY, setScrollY] = React.useState(0); // scroll position
   const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768);
-
+  const isMobileDevice = () => {
+    return /Mobi|Android|iPhone|iPod/i.test(navigator.userAgent);
+  };
   React.useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 768 || isMobileDevice());
     };
     window.addEventListener('resize', handleResize);
     return () => {
@@ -65,6 +67,12 @@ export const Navigation = (props) => {
           current = section.getAttribute('id');
         }
       });
+      if (
+        document.body.scrollHeight - (window.scrollY + window.innerHeight) <
+        500
+      ) {
+        current = 'contact';
+      }
       setActiveLink(current);
       setScrollY(currentScrollY);
     };
@@ -182,7 +190,7 @@ export const Navigation = (props) => {
                       alt="mailIcon"
                       style={{ paddingRight: '12px' }}
                     />
-                    Kontakt uns
+                    Kontakt
                   </a>
                 </div>
               </li>
@@ -201,7 +209,7 @@ export const Navigation = (props) => {
                   alt="mailIcon"
                   style={{ paddingRight: '12px' }}
                 />
-                Kontakt uns
+                Kontakt
               </a>
             </div>
           </div>

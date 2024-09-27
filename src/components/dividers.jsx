@@ -1,7 +1,7 @@
 import React from 'react';
 import { useVisibility } from '../useVisibility';
 
-export const Interest = () => {
+export const Interest = (props) => {
   const { isVisible, domRef } = useVisibility();
   return (
     <div className="intro">
@@ -18,7 +18,7 @@ export const Interest = () => {
               ref={domRef}
               className={`slide-left ${isVisible ? 'slide-visible' : ''}`}
             >
-              Interessiert? Kontakt uns!
+              {props.data ? props.data.text1 : 'Loading...'}
             </h5>{' '}
             <a
               href="#contact"
@@ -28,7 +28,7 @@ export const Interest = () => {
               }`}
               style={{ marginTop: '20px' }}
             >
-              Zum Kontakt
+              {props.data ? props.data.buttonText : 'Loading...'}
             </a>{' '}
           </div>
         </div>
@@ -37,7 +37,7 @@ export const Interest = () => {
   );
 };
 
-export const FinalText = () => {
+export const FinalText = (props) => {
   return (
     <div className="intro">
       <div
@@ -49,10 +49,7 @@ export const FinalText = () => {
       >
         <div className="container">
           <div className="interest">
-            <h5>
-              Unser Leistungsversprechen: Sie werden von dem Mehrwert für sich
-              und ihr Unternehmen begeistert sein.
-            </h5>{' '}
+            <h5>{props.data ? props.data.text2 : 'Loading...'}</h5>{' '}
           </div>
         </div>
       </div>

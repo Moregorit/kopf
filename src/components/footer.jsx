@@ -21,7 +21,6 @@ export const Footer = (contact) => {
             <div className="footer-brand-small">Managementberatung</div>
           </div>
           <div className="footer-column">
-            <p>{contact.data ? contact.data.copyright : 'Loading'}</p>
             <p>{contact.data ? contact.data.address : 'Loading'}</p>
             <p>{contact.data ? contact.data.phone : 'Loading'}</p>
             <p>{contact.data ? contact.data.email : 'Loading'}</p>
@@ -39,10 +38,40 @@ export const Footer = (contact) => {
             <a href="#contact" className="page-scroll">
               Kontakt
             </a>
-            <a className="media" href="#datenschutz" onClick={handleOpenModal}>
-              Datenschutz
+          </div>
+        </div>
+        <div
+          style={{
+            height: '1px',
+            borderBottom: '1px solid #737c8b',
+            marginTop: '20px',
+            marginBottom: '10px',
+          }}
+        ></div>
+        <div
+          className="footer-flex"
+          style={{
+            alignItems: 'center',
+            marginBottom: '-65px',
+          }}
+        >
+          <div className="footer-column">
+            <a
+              style={{ fontSize: '14px' }}
+              className=""
+              href="#datenschutz"
+              onClick={handleOpenModal}
+            >
+              Datenschutzerklärung
             </a>
           </div>
+          <div className="footer-column">
+            <p style={{ fontSize: '14px' }}>Website entwicklung</p>
+            <p style={{ fontSize: '14px' }}>moregoritt@gmail.com</p>
+          </div>
+          <p style={{ fontSize: '14px' }}>
+            {contact.data ? contact.data.copyright : 'Loading'}
+          </p>
         </div>
       </div>
       {isModalOpen && (

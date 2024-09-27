@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { useVisibility } from '../useVisibility';
 
-export const Contact = (props) => {
+export const Contact = ({ contact, mailTo }) => {
   const { isVisible, domRef } = useVisibility();
   const EmailButton = ({ id }) => {
     const handleEmailClick = (event) => {
       event.preventDefault();
-      const mailtoUrl = `mailto:${props.data ? props.data.email : 'Loading'}`;
+      const mailtoUrl = `mailto:${mailTo ? mailTo.email : 'Loading'}?subject=${
+        mailTo ? mailTo.subject : ''
+      }&body=${mailTo ? mailTo.message : ''}`;
       const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${
-        props.data ? props.data.email : 'Loading'
-      }`;
+        mailTo ? mailTo.email : 'Loading'
+      }&su=${mailTo ? mailTo.subject : ''}&body=${mailTo ? mailTo.email : ''}`;
       // open mail app
       window.location.href = mailtoUrl;
 
@@ -28,17 +30,17 @@ export const Contact = (props) => {
           onClick={handleEmailClick}
           style={{ color: 'rgb(38, 81, 181)', cursor: 'pointer' }}
         >
-          {props.data ? props.data.email : 'Loading'}
+          {contact ? contact.email : 'Loading'}
         </h4>
       </div>
     );
   };
 
-  const PhoneNumber = (props) => {
+  const PhoneNumber = () => {
     const [copied, setCopied] = useState(false);
 
     const handleCopyPhoneNumber = () => {
-      const phoneNumber = props.data ? props.data.phone : '';
+      const phoneNumber = contact ? contact.phone : '';
       if (phoneNumber) {
         // clipboard API suppport check
         if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -48,7 +50,7 @@ export const Contact = (props) => {
               showCopiedMessage();
             })
             .catch(() => {
-              alert('Не удалось скопировать номер телефона.');
+              alert('Etwas ist schief gelaufen');
             });
         } else {
           const textArea = document.createElement('textarea');
@@ -59,7 +61,7 @@ export const Contact = (props) => {
             document.execCommand('copy');
             showCopiedMessage();
           } catch (err) {
-            alert('Не удалось скопировать номер телефона.');
+            alert('Etwas ist schief gelaufen');
           }
           document.body.removeChild(textArea);
         }
@@ -75,7 +77,7 @@ export const Contact = (props) => {
       <div>
         <div onClick={handleCopyPhoneNumber} style={{ cursor: 'pointer' }}>
           <h4 style={{ color: 'rgb(38, 81, 181)', cursor: 'pointer' }}>
-            {props.data ? props.data.phone : 'Loading'}
+            {contact ? contact.phone : 'Loading'}
           </h4>
         </div>
         {copied && <div className="copy-message">Nummer kopiert</div>}
@@ -98,7 +100,7 @@ export const Contact = (props) => {
           >
             <div className="contact-element">
               <img src="img/icons/telnummer.svg" alt="" width={24} />
-              <PhoneNumber data={props.data} />
+              <PhoneNumber />
             </div>
 
             <div className="contact-element">
@@ -112,7 +114,7 @@ export const Contact = (props) => {
             } ${isVisible ? 'slide-visible' : ''}`}
             style={{ color: '#000' }}
           >
-            {props.data ? props.data.text : 'Loading'}
+            {contact ? contact.text : 'Loading'}
           </h5>{' '}
         </div>
       </div>

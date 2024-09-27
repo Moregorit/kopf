@@ -25,14 +25,17 @@ const App = () => {
 
   return (
     <div>
-      <Navigation data={landingPageData.MailTo} />
+      <Navigation mailTo={landingPageData.MailTo} />
       <Header data={landingPageData.Header} />
       <Features data={landingPageData.Features} />
-      <Interest />
+      <Interest data={landingPageData.Dividers} />
       <About data={landingPageData.About} />
       <Testimonials data={landingPageData.Testimonials} />
-      <Contact data={landingPageData.Contact} />
-      <FinalText />
+      <Contact
+        contact={landingPageData.Contact}
+        mailTo={landingPageData.MailTo}
+      />
+      <FinalText data={landingPageData.Dividers} />
       <Footer data={landingPageData.Contact} />
     </div>
   );

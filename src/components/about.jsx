@@ -14,7 +14,6 @@ export const About = (props) => {
           <div className="text-center">
             <h3>Unser Interaktionsablauf</h3>
           </div>
-          <h5>{props.data ? props.data.paragraph2 : 'Loading...'}</h5>
           <div className="steps-grid-container">
             {props.data
               ? props.data.steps.map((d, i) => (
@@ -30,7 +29,7 @@ export const About = (props) => {
       </div>
       <div className="container">
         <div className="text-center">
-          <h3>Expertise und Schwerpunkte</h3>
+          <h3>{props.data ? props.data.title : 'Loading...'}</h3>
         </div>
         <div className="list-style">
           <div className="col-lg-6 col-sm-6 col-xs-12" style={{ padding: 0 }}>
@@ -72,7 +71,7 @@ export const About = (props) => {
       </div>
       <div className="container">
         <div className="about-grid-container">
-          <div classNme="text">
+          <div className="text">
             <p
               ref={window.innerWidth > 768 ? domRef : null}
               className={`fade-in ${isVisible ? 'fade-in-visible' : ''}`}

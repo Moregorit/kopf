@@ -8,12 +8,17 @@ export const Header = (props) => {
     const browserName = navigator.userAgent.toLowerCase();
     return browserName.includes('safari') && !browserName.includes('chrome');
   };
+  const isMobileDevice = () => {
+    return /Mobi|Android|iPhone|iPod/i.test(navigator.userAgent);
+  };
 
   // parallax handling
   const [offsetY, setOffsetY] = useState(0);
   useEffect(() => {
     const handleScroll = () =>
-      !isSafari() ? setOffsetY(window.scrollY) : null;
+      !isSafari() || window.innerWidth < 1080
+        ? setOffsetY(window.scrollY)
+        : null;
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -22,7 +27,7 @@ export const Header = (props) => {
   // arrow visibility while Y offset
   const [style, setStyle] = useState({ display: 'block' });
   const handleScrollAndSize = () => {
-    if (window.scrollY > 100 || window.innerWidth < 992) {
+    if (window.scrollY > 100 || window.innerWidth < 992 || isMobileDevice()) {
       setStyle({ display: 'none' });
     } else {
       setStyle({ display: 'block' });
@@ -41,7 +46,7 @@ export const Header = (props) => {
       <div
         className="intro"
         style={{
-          backgroundPositionY: `${offsetY * 0.05}px`, // Adjust the parallax effect
+          backgroundPositionY: `${offsetY * 0.05}px`,
         }}
       >
         <div className="overlay">
@@ -75,13 +80,13 @@ export const Header = (props) => {
                   className="title-opacity btn btn-custom btn-lg page-scroll"
                   style={{ marginTop: '20px' }}
                 >
-                  Mehr erfahren
+                  {props.data ? props.data.button : 'Loading'}
                 </a>{' '}
               </div>
             </div>
             <div className="aboutus">
               <div className="aboutus-content" id="aboutus">
-                <h3>Wer wir sind?</h3>
+                <h3>{props.data ? props.data.title3 : 'Loading'}</h3>
                 <p
                   className={`fade-in ${isVisible ? 'fade-in-visible' : ''}`}
                   ref={domRef}

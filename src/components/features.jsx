@@ -6,14 +6,11 @@ export const Features = (props) => {
     <div id="features" className="features-section">
       <div className="container">
         <div className="text-center">
-          <h3>Leistungen</h3>
+          <h3>{props.data ? props.data.title : 'Loading...'}</h3>
         </div>
-        <div
-          ref={window.innerWidth < 768 ? domRef : null}
-          className="features-cards"
-        >
+        <div className="features-cards">
           {props.data
-            ? props.data.map((d, i) => (
+            ? props.data.features.map((d, i) => (
                 <div key={`${d.title}-${i}`} className="feature-card">
                   <img
                     style={{ width: '80px' }}
@@ -22,7 +19,7 @@ export const Features = (props) => {
                   />
                   <h4>{d.title}</h4>
                   <p
-                    ref={window.innerWidth > 768 ? domRef : null}
+                    ref={i === 0 ? domRef : null}
                     className={`fade-in ${isVisible ? 'fade-in-visible' : ''}`}
                   >
                     {d.text}
