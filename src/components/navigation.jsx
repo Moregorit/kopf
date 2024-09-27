@@ -1,18 +1,15 @@
 import React from 'react';
 
-export const Navigation = (mailTo) => {
+export const Navigation = ({ mailTo }) => {
+  console.log(mailTo);
   const handleEmailClick = (event) => {
     event.preventDefault();
-    const mailtoUrl = `mailto:${
-      mailTo.data ? mailTo.data.email : 'Loading'
-    }?subject=${mailTo.data ? mailTo.data.subject : ''}&body=${
-      mailTo.data ? mailTo.data.message : ''
-    }`;
+    const mailtoUrl = `mailto:${mailTo ? mailTo.email : 'Loading'}?subject=${
+      mailTo ? mailTo.subject : ''
+    }&body=${mailTo ? mailTo.message : ''}`;
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${
-      mailTo.data ? mailTo.data.adress : 'Loading'
-    }&su=${mailTo.data ? mailTo.data.subject : ''}&body=${
-      mailTo.data ? mailTo.data.email : ''
-    }`;
+      mailTo ? mailTo.adress : 'Loading'
+    }&su=${mailTo ? mailTo.subject : ''}&body=${mailTo ? mailTo.message : ''}`;
     // open mail app
     window.location.href = mailtoUrl;
 

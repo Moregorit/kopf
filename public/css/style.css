@@ -251,7 +251,7 @@ hr {
 }
 /* navbar hiding */
 .navbar.nav-hidden {
-  top: -100px;
+  top: -320px;
 }
 
 .navbar.nav-visible {

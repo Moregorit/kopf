@@ -11,7 +11,9 @@ export const Contact = ({ contact, mailTo }) => {
       }&body=${mailTo ? mailTo.message : ''}`;
       const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${
         mailTo ? mailTo.email : 'Loading'
-      }&su=${mailTo ? mailTo.subject : ''}&body=${mailTo ? mailTo.email : ''}`;
+      }&su=${mailTo ? mailTo.subject : ''}&body=${
+        mailTo ? mailTo.message : ''
+      }`;
       // open mail app
       window.location.href = mailtoUrl;
 
