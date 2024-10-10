@@ -740,6 +740,13 @@ header .intro-text {
   border-bottom: 2px solid #2651b5;
   width: fit-content;
 }
+.footer-divider {
+  border-bottom: 1px solid #343a42;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: -10%;
+  margin-right: -10%;
+}
 
 /* Modal */
 .modal {

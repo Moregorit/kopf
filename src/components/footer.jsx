@@ -40,16 +40,9 @@ export const Footer = (contact) => {
             </a>
           </div>
         </div>
+        <div className="footer-divider"></div>
         <div
-          style={{
-            height: '1px',
-            borderBottom: '1px solid #737c8b',
-            marginTop: '20px',
-            marginBottom: '10px',
-          }}
-        ></div>
-        <div
-          className="footer-flex"
+          className="footer-grid"
           style={{
             alignItems: 'center',
             marginBottom: '-65px',
@@ -66,8 +59,10 @@ export const Footer = (contact) => {
             </a>
           </div>
           <div className="footer-column">
-            <p style={{ fontSize: '14px' }}>Website entwicklung</p>
-            <p style={{ fontSize: '14px' }}>moregoritt@gmail.com</p>
+            <p style={{ fontSize: '14px' }}>Website entwicklung:</p>
+            <p style={{ fontSize: '14px', marginTop: '-10px' }}>
+              moregoritt@gmail.com
+            </p>
           </div>
           <p style={{ fontSize: '14px' }}>
             {contact.data ? contact.data.copyright : 'Loading'}
